@@ -41,10 +41,19 @@ A proposal to merge a branch into `main`. The review and validation boundary. A 
 The CI process that compiles, tests, and packages code from a specific commit. Deterministic and reproducible.
 
 ### Artifact
-The immutable output of a build: binary, wheel, container image, installer, zip, IPA, APK, etc. Once created, an artifact never changes.
+The immutable output of a build: binary, wheel, container image, installer, zip, IPA, APK, etc. Once created, an artifact never changes. An artifact carries **build identity** (commit SHA, build number, timestamp) embedded at build time. It does not carry release identity — that is provided externally by the deployment context at promotion time.
+
+### Build Identity
+The provenance data embedded in an artifact at build time: commit SHA, build number, build timestamp, pipeline ID. Permanent and immutable. This is what the artifact knows about itself.
+
+### Release Identity
+The version label and channel assignment given to an artifact at promotion time: semantic version, channel label, release notes. Provided by the deployment context, not embedded in the artifact. This is what the user sees.
+
+### Deployment Context
+The external source that provides release identity to a running artifact: environment variable, sidecar metadata file, container label, package manifest, installer metadata, or config endpoint. The mechanism varies by product type; the principle is constant.
 
 ### Promotion
-Moving the same artifact to the next environment or channel. The artifact does not change; only where it runs changes.
+Moving the same artifact to the next environment or channel. The artifact does not change; only where it runs and its release identity change. Promotion adds aliases and deployment context — it never triggers a rebuild.
 
 ---
 
@@ -62,6 +71,12 @@ A git reference that marks a meaningful version or release point. Format: `v1.4.
 
 ### Release
 A versioned, tagged, published product state with notes and artifacts. A release is a named, auditable moment in the product's history.
+
+### Changelog
+A structured record of changes between releases, derived from conventional commit messages at tag time. Changelog entries correspond to tags, not to individual merges. Dev channel builds do not produce changelog entries.
+
+### Alias
+A secondary pointer to an existing artifact. Promotion adds aliases (version tags, channel labels) to an immutable artifact without rebuilding it. The artifact bytes and checksum remain identical.
 
 ---
 
