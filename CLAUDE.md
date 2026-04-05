@@ -1,25 +1,33 @@
 # CLAUDE.md
 
-This is a text-only reference repository. There is no code to build or test.
-
-## What This Is
-
 A Deterministic Engineering Operating System — an opinionated framework for how software is conceived, constructed, validated, integrated, released, and evolved. Designed for consumption by humans and AI agents.
+
+## Project Structure
+
+Content lives in `src/`. The root contains configuration and build tooling. The site is built with mdBook.
 
 ## Reading Order
 
-1. **[DOCTRINE.md](DOCTRINE.md)** — First principles. The seven non-negotiable principles and project classification.
-2. **[GLOSSARY.md](GLOSSARY.md)** — Ubiquitous language. Adopt this vocabulary exactly.
-3. **[modules/construction/](modules/construction/)** — How to approach building: toolchain selection, validation surface, agent execution loop.
-4. **[modules/change-management/](modules/change-management/)** — Day-to-day development: branches, PRs, commits, issues, releases.
-5. **[modules/delivery/](modules/delivery/)** — Delivery operations: artifacts, promotion, environments, channels, CI/CD.
-6. **[modules/knowledge/](modules/knowledge/)** — Knowledge persistence: ADRs, plans, documentation, context management.
-7. **[ADAPTING.md](ADAPTING.md)** — Operational tiers (solo/personal, solo/consultancy, small team), project classes, and product type variations.
+1. **[src/DOCTRINE.md](src/DOCTRINE.md)** — First principles. The seven non-negotiable principles and project classification.
+2. **[src/GLOSSARY.md](src/GLOSSARY.md)** — Ubiquitous language. Adopt this vocabulary exactly.
+3. **[src/modules/construction/](src/modules/construction/)** — How to approach building: toolchain selection, validation surface, agent execution loop.
+4. **[src/modules/change-management/](src/modules/change-management/)** — Day-to-day development: branches, PRs, commits, issues, releases.
+5. **[src/modules/delivery/](src/modules/delivery/)** — Delivery operations: artifacts, promotion, environments, channels, CI/CD.
+6. **[src/modules/knowledge/](src/modules/knowledge/)** — Knowledge persistence: ADRs, plans, documentation, context management.
+7. **[src/ADAPTING.md](src/ADAPTING.md)** — Operational tiers (solo/personal, solo/consultancy, small team), project classes, and product type variations.
 
 ## When Referencing This Framework
 
-- Determine which tier and project class apply to the target project (see ADAPTING.md and DOCTRINE.md)
-- Set up the toolchain before generating code (see modules/construction/)
+- Determine which tier and project class apply to the target project (see src/ADAPTING.md and src/DOCTRINE.md)
+- Set up the toolchain before generating code (see src/modules/construction/)
 - Follow the tier-appropriate level of ceremony
 - Use the glossary terms consistently
 - Validate with golden commands before declaring work complete
+
+## Golden Commands
+
+- `make fmt` — Format all markdown
+- `make lint` — Lint all markdown
+- `make build` — Build the static site
+- `make serve` — Build and serve locally with live reload
+- `make ci` — Run fmt + lint + build (full validation surface)

@@ -11,3 +11,7 @@ Thumbs.db
 
 # Claude Code
 .claude/
+
+# Build output
+book/
+node_modules/
