@@ -46,7 +46,7 @@ Prefixes: `feature/`, `fix/`, `chore/`, `spike/`, `hotfix/`
 
 ### Rules
 
-When PRs are used (Tier 2 and Tier 3 — see [Adapting](ADAPTING.md)):
+When PRs are used (Tier 2 and Tier 3 — see [Adapting](../../ADAPTING.md)):
 
 - PR must explain **why**, not just what
 - PR must link an issue
