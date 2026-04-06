@@ -1,8 +1,10 @@
 # Deterministic Engineering Operating System
 
-An opinionated framework for how software is conceived, constructed, validated, integrated, released, and evolved.
+An opinionated framework for how software is conceived, constructed, validated, integrated, released, and evolved — by humans and AI agents alike.
 
 This is not a universal template. It is a coherent operating model built on a pattern that keeps reappearing in healthy engineering: **constrain the environment, enforce standards through tooling, track work through issues, validate changes deterministically, promote immutable artifacts, and persist intent beyond any single session.**
+
+The bad code can come from an agent or from a human. The framework does not care. It constrains both.
 
 ---
 
@@ -114,19 +116,19 @@ Class governs toolchain and ceremony. Tier governs coordination and review. They
 
 ---
 
-## For Agents
+## Getting Started
 
-If you are an AI agent consuming this framework:
+Whether you are a human adopting this framework or an AI agent consuming it, the reading order is the same:
 
-1. Read **[Doctrine](DOCTRINE.md)** first. Understand the principles.
-2. Read **[Glossary](GLOSSARY.md)**. Adopt this vocabulary exactly.
-3. Read **[Construction](modules/construction/)** for how to approach building.
-4. Read **[Change Management](modules/change-management/)** for day-to-day development rules.
-5. Read **[Delivery](modules/delivery/)** for release and deployment operations.
-6. Read **[Knowledge](modules/knowledge/)** for how to persist intent and decisions.
-7. Read **[Adapting](ADAPTING.md)** to determine which tier and class apply to the current project.
+1. **[Doctrine](DOCTRINE.md)** — Understand the principles. Everything else follows from these.
+2. **[Glossary](GLOSSARY.md)** — Learn the vocabulary. Use it consistently.
+3. **[Construction](modules/construction/)** — How to set up projects and build correctly.
+4. **[Change Management](modules/change-management/)** — Day-to-day development: branches, PRs, commits, issues.
+5. **[Delivery](modules/delivery/)** — Release and deployment: artifacts, promotion, channels.
+6. **[Knowledge](modules/knowledge/)** — How to persist intent, decisions, and context.
+7. **[Adapting](ADAPTING.md)** — Determine which tier and class apply to your project.
 
-When working on a project that references this framework: set up the toolchain before generating code, create branches with the correct naming convention, write conventional commits, validate with golden commands, open PRs with issue links, and follow the tier-appropriate level of ceremony.
+Then: set up the toolchain before generating code, create branches with the correct naming convention, write conventional commits, validate with golden commands, open PRs with issue links, and follow the tier-appropriate level of ceremony.
 
 ---
 
@@ -139,3 +141,13 @@ But there is a highly repeatable proven architecture:
 > Constrain the environment with tooling → track work with issues → build in bounded tasks → validate deterministically → integrate through trunk-based mainline → promote immutable artifacts through channels → persist intent beyond any single session.
 
 That is the best foundation. This framework is that foundation.
+
+---
+
+## Origin
+
+This framework is the synthesis of 15 years building software and 3 years coding with AI agents. It is opinionated by design. It does not claim to solve every problem or fit every team. It solves the problems I have encountered repeatedly — and it encodes the patterns that have consistently produced good outcomes.
+
+It is also a living document. The principles are stable. The tactics will evolve as tools, ecosystems, and agents improve. What will not change: the conviction that discipline belongs in tooling, not in memory.
+
+— Gerardo Sorchini

@@ -1,8 +1,8 @@
 # Doctrine
 
-First principles for the Deterministic Engineering Operating System.
+First principles. Non-negotiable across all modules.
 
-These principles are non-negotiable across all modules. Tactics flex; doctrine does not. If you find yourself working around a principle instead of applying it, the framework needs revision — not a workaround.
+Tactics flex; doctrine does not. If you find yourself working around a principle instead of applying it, the framework needs revision — not a workaround.
 
 ---
 

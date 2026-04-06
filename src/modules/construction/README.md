@@ -1,8 +1,8 @@
 # Construction
 
-How software gets built — framing, scaffolding, toolchain, validation, and the agent execution loop.
+How software gets built — from project scaffolding to integration-ready changes.
 
-This is the module that governs what happens before code reaches a pull request. It answers: how do we set up a project so that both humans and agents produce high-quality, validated work by default?
+This module governs everything that happens before code reaches a pull request. The central question: how do we set up a project so that both humans and agents produce high-quality, validated work by default?
 
 ---
 

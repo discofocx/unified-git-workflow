@@ -1,6 +1,6 @@
 # Toolchain
 
-How to select and configure the enforcement layer for a project.
+Selecting and configuring the enforcement layer for a project.
 
 ---
 

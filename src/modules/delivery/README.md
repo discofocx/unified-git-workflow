@@ -1,8 +1,8 @@
 # Delivery
 
-How built software moves from source to users.
+How built software reaches users.
 
-This module governs artifacts, promotion, environments, channels, CI/CD, and rollback. It answers the question: once code is merged, how does it become something a user can run?
+Once code is merged, how does it become something a user can run? This module governs artifacts, promotion, environments, channels, CI/CD, and rollback.
 
 ---
 

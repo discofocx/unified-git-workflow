@@ -1,8 +1,8 @@
 # Knowledge
 
-How intent, decisions, and context persist beyond any single session.
+How intent, decisions, and context outlive any single session.
 
-This module governs the practices that keep a project understandable over time — for humans and for future agents who arrive with no prior conversation history.
+Software projects accumulate knowledge over time. This module governs the practices that keep that knowledge accessible — for humans and for future agents who arrive with no prior conversation history.
 
 ---
 
@@ -17,9 +17,9 @@ This module governs the practices that keep a project understandable over time �
 
 ## The Central Problem
 
-Software projects accumulate intent over time: why was this built this way? Why not the other approach? What constraints drove this decision? What is the plan for the next milestone?
+Why was this built this way? Why not the other approach? What constraints drove this decision? What is the plan for the next milestone?
 
-This knowledge lives somewhere. The question is where:
+Every project accumulates these questions. The answers live somewhere. The question is where:
 
 | Where it lives     | Durability               | Discoverability            | Risk |
 | ------------------ | ------------------------ | -------------------------- | ---- |

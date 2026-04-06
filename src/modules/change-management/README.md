@@ -1,8 +1,8 @@
 # Change Management
 
-How changes are tracked, reviewed, integrated, and released.
+How changes move from a developer's branch into `main` and from `main` into a tagged release.
 
-This module governs the day-to-day mechanics of moving code from a developer's branch into `main` and from `main` into a tagged release. It is the workflow most teams think of when they think of "git workflow" — but it is one part of a larger system.
+This is the workflow most teams think of when they think of "git workflow" — but it is one part of a larger system.
 
 ---
 
