@@ -18,7 +18,7 @@ But there is a strong shape that keeps reappearing:
 
 > Design the environment so that low-quality work cannot easily pass unnoticed. Use tooling for rules, issues for tracking, automation for validation, and immutable artifacts for delivery.
 
-What changes from team to team is mostly the **tactics**, not the underlying **principles**.
+What changes from team to team is mostly the **tactics**, not the underlying **principles**. This framework uses GitHub as its reference implementation — issues, pull requests, labels — but the principles apply to any platform that supports issue tracking, branch-based development, and CI. The method is the discipline; the tools are interchangeable.
 
 Where teams go wrong is usually when they rely on memory — human or machine — for things that tooling can enforce. Formatting, linting, type-checking, testing, commit conventions, issue linkage, release tagging: these are not things to remember. They are things to automate.
 
