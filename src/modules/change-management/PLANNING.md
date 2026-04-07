@@ -4,7 +4,36 @@ How work is organized before it becomes branches, PRs, and commits.
 
 ---
 
-## The Hierarchy
+## Two Paths, One Workflow
+
+Not all work needs an epic. The framework supports two paths into the development workflow:
+
+```text
+Epic  →  Issue  →  Branch / PR / Commits     (planned work)
+          Issue  →  Branch / PR / Commits     (standalone work)
+```
+
+Both paths converge at the same point: an issue with a branch, a PR, and commits. The difference is only in how the work is scoped upstream.
+
+### When to use an epic
+
+Use an epic when the work requires **multiple issues to deliver a coherent outcome** — a new feature, a significant refactor, a migration. The epic is the planning boundary where you ask "what are we building and why?" and decompose the answer into shippable pieces.
+
+### When to use a standalone issue
+
+Use a standalone issue when the work is **self-contained and independently meaningful**: a bug fix, a dependency upgrade, a documentation correction, a small enhancement, a hotfix. No parent needed. The issue is the plan.
+
+### The decision rule
+
+> **If the work needs decomposition, it is an epic. If it ships in one branch, it is a standalone issue.**
+
+Do not wrap a single issue in an epic for the sake of consistency. Epics exist to manage complexity — when there is no complexity to manage, they are overhead.
+
+---
+
+## Epics
+
+### The Hierarchy
 
 Work flows through three levels:
 
@@ -94,7 +123,7 @@ Prefer **vertical slices** when possible. They keep each issue independently shi
 
 ## Traceability
 
-The full traceability chain:
+### Epic work
 
 ```text
 Epic (parent issue)
@@ -104,10 +133,22 @@ Epic (parent issue)
                 └── Commits (conventional, reference issue)
 ```
 
-Every level points to the one above it. You can reconstruct the full history of any epic by following the references:
-
 - **From epic down**: parent issue → task list → child issues → linked PRs → commits
 - **From commit up**: commit message → PR → issue → parent epic
+
+### Standalone work
+
+```text
+Issue
+ └── Branch (named with issue ID)
+      └── PR (links issue, merges to main)
+           └── Commits (conventional, reference issue)
+```
+
+- **From issue down**: issue → linked PR → commits
+- **From commit up**: commit message → PR → issue
+
+The traceability chain is shorter but just as complete. Every commit still traces to an issue. The only difference is whether an epic sits above it.
 
 ---
 
