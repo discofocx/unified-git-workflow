@@ -4,7 +4,7 @@
 
 An opinionated method for how software is conceived, constructed, validated, integrated, released, and evolved — by humans and AI agents alike.
 
-This is not a universal template. It is a coherent operating model built on a pattern that keeps reappearing in healthy engineering: **constrain the environment, enforce standards through tooling, track work through issues, validate changes deterministically, promote immutable artifacts, and persist intent beyond any single session.**
+This is not a universal template. It is a coherent operating model built on a pattern that keeps reappearing in healthy engineering: **enforce standards through tooling, track work through issues, validate changes deterministically, promote immutable artifacts, and persist intent beyond any single session.**
 
 The bad code can come from an agent or from a human. The framework does not care. It constrains both.
 
