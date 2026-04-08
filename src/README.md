@@ -98,6 +98,18 @@ The difference is not heroic discipline. It is environment design. The method ma
 
 ---
 
+## The Cost of Discipline
+
+This looks like a lot of process. Toolchains, issues, golden commands, conventional commits, ADRs, promotion gates — it adds up.
+
+But you are not adding process. You are building a machine. A machine that lets you hand an agent a scoped task and trust the output without reading every line. A machine that lets a new contributor push code on day one without breaking the build. A machine that lets you cut a release at any time because `main` is always in a shippable state.
+
+The math works like this: every minute spent wiring a formatter, a linter, and a test harness saves multiples in agent-generated rework you would otherwise debug by hand. Every issue you write saves a future session of re-discovering what you meant. Every golden command you wire saves a deployment you would otherwise have to roll back.
+
+The ceremony is not a tax. It is insurance. And it compounds — the more of the method you adopt, the more you can safely delegate.
+
+---
+
 ## Why Agentic Coding Changes the Game
 
 Agents amplify both good and bad patterns at speed. A well-constrained environment makes agents remarkably productive. A poorly constrained one produces volume without quality.
