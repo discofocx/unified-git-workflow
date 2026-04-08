@@ -10,6 +10,28 @@ The bad code can come from an agent or from a human. The framework does not care
 
 ---
 
+## The Problem
+
+Agentic coding has a honeymoon phase. The first few days are magic — ideas materialize in hours instead of months. Then the project grows, and the magic fades.
+
+The agent starts ignoring the architecture you discussed three sessions ago. Code quality degrades because the standards you wrote down are buried in context the model no longer sees. Documents drift from the implementation. Each project ends up with its own ad-hoc structure — plans in one place, docs in another, conventions in neither. You ship an MVP and then discover it is architecturally disposable: working software that cannot be extended without starting over.
+
+This is not an agent problem. It is an environment problem.
+
+When a non-technical co-founder jumps into a codebase and starts vibe coding without constraints, features fly — but cutting a stable release takes three times as long because nothing enforces consistency. When an experienced engineer trusts the agent to make the right architectural choices unprompted, the result is whatever pattern the model defaults to, not whatever pattern the project needs.
+
+The instinct is to fix this with more prompting — stricter instructions, longer system prompts, more documentation. It does not hold. Prompts get buried. Documents go stale. Rules that live only in text are rules that drift.
+
+Rust developers already know the answer. Cargo, Clippy, and the compiler enforce opinionation so effectively that it is hard to produce bad code by accident. The environment does the constraining — not the developer's memory, and not a prompt.
+
+The question is: **why not generalize that pattern across the entire engineering lifecycle?**
+
+Not just formatting and linting — but branching, commits, validation, releases, deployment, and knowledge persistence. One coherent loop from issue to release, enforced by tooling, repeated every time.
+
+That is what this framework does.
+
+---
+
 ## The Core Insight
 
 There is no single universally proven master pattern that cleanly solves how to build software — from the first line of code through release and maintenance — for every team and product.
@@ -28,6 +50,38 @@ This framework is that operating model, with first-class support for agentic cod
 
 ---
 
+## What This Is (and Isn't)
+
+Nothing in this framework is novel in isolation. Trunk-based development, conventional commits, semantic versioning, architecture decision records, CI/CD pipelines, immutable artifacts — these are established practices with years of proven use.
+
+What is usually missing is the **unification**. Teams adopt some of these practices but not others. They have good CI but no issue discipline. They have conventional commits but no release automation. They have ADRs but no validation surface. Each practice works in isolation; together they form a coherent system — but only if someone connects them deliberately.
+
+UEM is that connective layer. It composes known practices into a single operating model that covers the full lifecycle: from issue to release, repeated every time.
+
+### What UEM draws from
+
+- **Trunk-based development** — short-lived branches, frequent integration to mainline
+- **Conventional commits** — structured commit messages that enable automation
+- **Semantic versioning** — predictable version contracts
+- **Architecture decision records** — persisted design intent
+- **CI/CD best practices** — deterministic validation, immutable artifacts, promotion over rebuilding
+- **Environment-as-constraint** — the Rust/Cargo insight generalized beyond a single language
+
+### What UEM adds
+
+- **The unification itself** — one coherent model instead of fragmented practices adopted piecemeal
+- **Agent-first design** — the same interface for humans and machines, with constraints enforced by tooling rather than prompts
+- **Tier and class scaling** — explicit guidance for how ceremony and coordination change as projects and teams grow
+- **The core loop** — a repeatable cycle from issue through validation to release that is the same every time, regardless of what you are building
+
+### What UEM is not
+
+- **Not an architecture pattern.** It does not compete with DDD, hexagonal, clean architecture, or any structural design approach. Bring your own architecture.
+- **Not a project management methodology.** It does not replace Agile, Scrum, Kanban, or Shape Up. It operates underneath — the engineering reinforcement loop that those methodologies sit on top of.
+- **Not a universal template.** It is opinionated by design. It may not fit every team or every product. It solves a specific set of problems — and it is honest about where it stops.
+
+---
+
 ## Why Agentic Coding Changes the Game
 
 Agents amplify both good and bad patterns at speed. A well-constrained environment makes agents remarkably productive. A poorly constrained one produces volume without quality.
@@ -39,6 +93,17 @@ The key insight:
 This is equally true for humans — but agents make the problem more visible. The solution is not more prompting. It is more environment design.
 
 Good agentic coding is not "prompt better." It is "design the environment so the agent cannot easily produce low-quality work unnoticed."
+
+### How Agents Consume the Method
+
+There is no special integration. The agent interacts with UEM through the same project files a human uses:
+
+- **Toolchain configs** (linter rules, type checker settings) constrain what the agent can produce
+- **Golden commands** (`just ci`) give the agent a single entry point for validation
+- **Issues** give the agent scoped, traceable units of work
+- **Conventions files** (`CLAUDE.md`, `.cursorrules`, or equivalent) communicate project-specific expectations the toolchain cannot enforce
+
+The method does not require a particular agent, IDE, or integration. Any agent that can read files, write code, and run shell commands can operate inside a UEM-shaped project. The environment does the constraining — the agent just needs to be pointed at it.
 
 ---
 
