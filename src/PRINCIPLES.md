@@ -106,9 +106,19 @@ Not all projects deserve the same level of ceremony on day one. The framework sc
 ### Rules
 
 - Start at the class that matches your realistic intent, not your aspirational one.
-- Moving up classes means **adding ceremony**, not restructuring. If you followed the principles at Class 1, the upgrade to Class 2 is smooth.
+- Moving up classes means **adding to what exists**, not restructuring. If you followed the principles at a lower class, the transition is smooth — no rewriting, no starting over.
 - Moving down is rare and usually means you misjudged the project's purpose.
 - The class determines which parts of the framework apply and how strictly. See [Adapting](ADAPTING.md).
+
+### What a Class Transition Looks Like
+
+A project that starts as a Class 0 scratchpad and grows into a Class 2 product seed adds ceremony incrementally:
+
+- **Class 0**: Formatter configured, basic project structure
+- **→ Class 1**: Add linter, add test runner, start writing tests
+- **→ Class 2**: Add type checker, wire CI, require issues for all changes, set up golden commands
+
+Each step is a commit or two, not a rewrite. The code doesn't change — the constraints around it tighten.
 
 ### The Relationship Between Class and Tier
 
