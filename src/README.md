@@ -142,6 +142,25 @@ In one sentence:
 
 ---
 
+## The Core Loop
+
+The smallest unit of work in UEM is the **bounded task** — a single, scoped change tied to an issue, executed through a repeatable loop, and validated before integration. This loop is the operational spine of the method. It is the same every time, regardless of what you are building or who is building it.
+
+```text
+1. Select issue          — pick a specific, scoped unit of work
+2. Inspect codebase      — understand current state, patterns, relevant files
+3. State plan            — articulate what will change and why
+4. Make focused changes  — implement within the bounded scope
+5. Run validation        — execute golden commands (fmt, lint, typecheck, test)
+6. Fix until clean       — iterate until the toolchain is satisfied
+7. Summarize deltas      — describe what changed for the reviewer
+8. Prepare for integration — open PR, link issue, confirm CI
+```
+
+This is the cycle that produces predictable results. A human follows it. An agent follows it. The toolchain enforces the quality gates within it. See [Construction](modules/construction/) for the full treatment — bounded task rationale, session boundaries, and project scaffolding.
+
+---
+
 ## Principles
 
 These are non-negotiable. They apply across all modules. See [Principles](PRINCIPLES.md) for the full treatment.
