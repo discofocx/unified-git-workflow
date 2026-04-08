@@ -82,6 +82,22 @@ UEM is that connective layer. It composes known practices into a single operatin
 
 ---
 
+## What Changes
+
+| Concern                    | Without                                                                          | With UEM                                                                          |
+| -------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Standards**              | Live in docs the agent stops reading after the context window fills up           | Enforced by the toolchain — the agent cannot produce code that violates them      |
+| **Work tracking**          | Ad-hoc: some things in issues, some in chat, some in someone's head              | Every meaningful change maps to an issue; work is traceable and resumable         |
+| **Validation**             | Manual, inconsistent, or skipped under pressure                                  | One command (`just ci`) runs the full validation surface, locally and in CI       |
+| **Code quality over time** | Degrades as the project grows — the first month is magic, the third is a rewrite | Stays predictable because the corridor is enforced, not remembered                |
+| **Releases**               | "It works on my machine" or a manual checklist                                   | Tagged, versioned, built once, promoted through channels as immutable artifacts   |
+| **Knowledge**              | Lives in chat history that no future session can see                             | Persisted in the project system — ADRs, issues, commit messages, docs in the repo |
+| **New contributors**       | Onboarding is tribal knowledge and a long Slack thread                           | The toolchain, conventions files, and issue backlog are the onboarding            |
+
+The difference is not heroic discipline. It is environment design. The method makes the default path the correct path — for humans and agents alike.
+
+---
+
 ## Why Agentic Coding Changes the Game
 
 Agents amplify both good and bad patterns at speed. A well-constrained environment makes agents remarkably productive. A poorly constrained one produces volume without quality.
