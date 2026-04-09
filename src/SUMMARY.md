@@ -25,3 +25,4 @@
 ---
 
 [Adapting](ADAPTING.md)
+[Agent Entry Point](AGENT.md)
