@@ -31,7 +31,7 @@ The complete content lives in [`src/`](src/README.md).
 
 ## Already Have a Project?
 
-Skip the reading order. Use the [Brownfield Audit](src/QUICKSTART-AUDIT.md) — a prompt template that assesses your existing codebase and proposes a forward-only adoption plan.
+Skip the reading order. Use the [Brownfield Audit](src/QUICKSTART-AUDIT.md) — a prompt template that assesses your existing codebase against UEM and gives you a practical adoption plan.
 
 ## Build the Site
 
